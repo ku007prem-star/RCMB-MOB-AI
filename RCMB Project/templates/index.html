@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RCMB mob AI | Regional College of Management Bangalore</title>
+  
+  <!-- Favicon & PWA App Icons -->
+  <link rel="icon" type="image/jpeg" href="/static/images/rcmb-logo.jpg">
+  <link rel="manifest" href="/static/manifest.json">
+  <meta name="theme-color" content="#8B1D24">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="/static/images/icon-192.png">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Bespoke Stylesheet -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar (Demo access kept ONLY here in the top header as requested) -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="brand-wrapper" title="Regional College of Management Bangalore">
+        <img src="/static/images/rcmb-logo.jpg" alt="RCMB Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-sub">RCM BANGALORE</span>
+          <span class="brand-title">RCMB <span>mob AI</span></span>
+        </div>
+      </div>
+
+      <!-- Demo Buttons ONLY in the Top Header -->
+      <div class="nav-demos-pill-group">
+        <span class="nav-demos-label"><i class="fa-solid fa-bolt"></i> Demos:</span>
+        <button class="demo-nav-btn btn-instant-demo" data-email="satish@rcmb.edu.in" data-pw="rcmb2026" title="Login as Student Satish">
+          🎓 Satish
+        </button>
+        <button class="demo-nav-btn btn-instant-demo" data-email="tapas.panda@rcmb.edu.in" data-pw="rcmb2026" title="Login as Prof. Tapas Panda">
+          👨‍🏫 Tapas Panda
+        </button>
+        <button class="demo-nav-btn btn-instant-demo" data-email="ashim@rcmb.edu.in" data-pw="rcmb2026" title="Login as Dr. Ashim">
+          🤖 Dr. Ashim
+        </button>
+        <button class="demo-nav-btn btn-instant-demo" data-email="jay.mandal@rcmb.edu.in" data-pw="rcmb2026" title="Login as Dr. S R Mandal (CEO)">
+          🏛️ Dr. Mandal
+        </button>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Logged Out Buttons -->
+        <div id="nav-auth-btns" style="display: flex; gap: 0.6rem;">
+          <button class="btn btn-secondary btn-open-login"><i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In</button>
+          <button class="btn btn-primary btn-open-register"><i class="fa-solid fa-user-plus"></i> Register</button>
+        </div>
+
+        <!-- Logged In Menu -->
+        <div id="nav-user-menu" style="display: none; align-items: center; gap: 0.75rem;">
+          <span class="btn btn-soft" id="nav-user-badge"><i class="fa-solid fa-user-graduate"></i> Student</span>
+          <button class="btn btn-secondary btn-logout" title="Sign Out"><i class="fa-solid fa-power-off"></i></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======================================================================
+       LANDING PAGE VIEW (Clean & Authentic - No Demo Clutter in Hero or Cards)
+       ====================================================================== -->
+  <main id="landing-view">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <!-- Left Column -->
+      <div class="hero-left">
+        <div class="hero-badge">
+          <i class="fa-solid fa-sparkles"></i> Made for the RCMB community
+        </div>
+
+        <h1 class="hero-title">
+          Welcome to RCMB
+          <span class="crimson-text">mob AI</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Your college updates, academic timetables, and answers, all in one place. Exclusively for MBA and PGDM scholars.
+        </p>
+
+        <div class="choose-space-label">CHOOSE YOUR SPACE</div>
+
+        <!-- Authentic Clean Role Cards (Like original Replit design) -->
+        <div class="role-cards-stack">
+          <!-- Student Card -->
+          <a href="#" class="role-card-item btn-open-role-login" data-role="student">
+            <div class="role-card-content">
+              <div class="role-avatar">ST</div>
+              <div class="role-text-box">
+                <h4>Student</h4>
+                <p>Ask about your classes, attendance, homework and campus life.</p>
+              </div>
+            </div>
+            <div class="role-chevron"><i class="fa-solid fa-chevron-right"></i></div>
+          </a>
+
+          <!-- Faculty Card -->
+          <a href="#" class="role-card-item btn-open-role-login" data-role="faculty">
+            <div class="role-card-content">
+              <div class="role-avatar fa-role">FA</div>
+              <div class="role-text-box">
+                <h4>Faculty</h4>
+                <p>Share learning materials and keep your class informed.</p>
+              </div>
+            </div>
+            <div class="role-chevron"><i class="fa-solid fa-chevron-right"></i></div>
+          </a>
+
+          <!-- CEO Card -->
+          <a href="#" class="role-card-item btn-open-role-login" data-role="ceo">
+            <div class="role-card-content">
+              <div class="role-avatar le-role">LE</div>
+              <div class="role-text-box">
+                <h4>CEO</h4>
+                <p>Leadership dashboard &amp; operational summaries.</p>
+              </div>
+            </div>
+            <div class="role-chevron"><i class="fa-solid fa-chevron-right"></i></div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Media Showcase (Real Campus Building + Outlook Director Mandal) -->
+      <div class="hero-right-creative">
+        <div class="hero-main-building-card">
+          <img src="/static/images/rcmb-building-real.jpg" alt="RCMB Main Campus Building">
+          <div class="hero-building-badge">
+            <i class="fa-solid fa-landmark"></i>
+            <span>REGIONAL COLLEGE OF MANAGEMENT BANGALORE</span>
+          </div>
+        </div>
+
+        <div class="hero-sub-grid-photos">
+          <!-- Outlook Cover Card -->
+          <div class="hero-outlook-card">
+            <div class="hero-outlook-img-wrap">
+              <img src="/static/images/dr-mandal-outlook.jpg" alt="Dr. S R Mandal - Outlook Cover">
+              <span class="hero-outlook-tag">OUTLOOK COVER</span>
+            </div>
+            <div class="hero-outlook-body">
+              <h5>Dr. S R Mandal (Founder - Director)</h5>
+              <p>"Inclusive Education System Rooted in Equality and Diversity."</p>
+            </div>
+          </div>
+
+          <!-- Amphitheatre Classroom Preview -->
+          <div class="hero-timetable-preview-card">
+            <div class="hero-classroom-img-wrap">
+              <img src="/static/images/rcmb-classroom.jpg" alt="Amphitheatre Classroom">
+              <span class="facility-badge-top" style="top: 0.65rem; left: 0.65rem; font-size: 0.65rem; padding: 0.2rem 0.6rem;">
+                <i class="fa-solid fa-layer-group"></i> Amphitheatre A
+              </span>
+            </div>
+            <div class="hero-timetable-body">
+              <h5>Executive Amphitheatre</h5>
+              <p style="font-size: 0.74rem; color: var(--text-muted); margin-top: 0.2rem;">Modern tiered case study learning hall.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Campus Infrastructure -->
+    <section class="section-wrapper">
+      <div class="section-header-centered">
+        <span class="section-tag">Campus Facilities</span>
+        <h2 class="section-title">World-Class MBA &amp; PGDM Learning Spaces</h2>
+        <p class="section-desc">
+          State-of-the-art amphitheaters and modern lecture auditoriums at Regional College of Management Bangalore.
+        </p>
+      </div>
+
+      <div class="facility-grid">
+        <div class="facility-card">
+          <div class="facility-img-wrap">
+            <img src="/static/images/rcmb-classroom.jpg" alt="Tiered Amphitheatre Classroom">
+            <span class="facility-badge-top"><i class="fa-solid fa-users-rectangle"></i> Case Study Theatre</span>
+          </div>
+          <div class="facility-body">
+            <h3>Interactive Amphitheatre Lecture Hall</h3>
+            <p>
+              Tiered wooden seating modeled after top global business schools, facilitating active case study discussions and management simulations.
+            </p>
+            <div class="facility-meta">
+              <span><i class="fa-solid fa-building-columns"></i> Academic Block A</span>
+              <span><i class="fa-solid fa-wifi"></i> Smart Audio-Visual</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="facility-card">
+          <div class="facility-img-wrap">
+            <img src="/static/images/rcmb-auditorium.jpg" alt="Executive Auditorium">
+            <span class="facility-badge-top"><i class="fa-solid fa-chalkboard-user"></i> Executive Auditorium</span>
+          </div>
+          <div class="facility-body">
+            <h3>Corporate Seminar &amp; CXO Auditorium</h3>
+            <p>
+              Equipped with high-definition digital podiums, surround acoustics, and hybrid broadcast tech for CXO guest lectures and convocations.
+            </p>
+            <div class="facility-meta">
+              <span><i class="fa-solid fa-award"></i> 250+ Seating Capacity</span>
+              <span><i class="fa-solid fa-video"></i> Hybrid Streaming Ready</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       PORTAL VIEW (Fixed Prominent Chatbot + 3-Dot Drawer Menu + Distinct Roles)
+       ====================================================================== -->
+  <main id="portal-view">
+    <!-- Portal Fixed Top Bar with User Info & 3-Dot Menu -->
+    <header class="portal-top-bar">
+      <div class="portal-user-badge-col">
+        <div class="portal-avatar-circle" id="portal-user-initials">SK</div>
+        <div class="portal-user-meta">
+          <h4 id="portal-user-name">Satish Kumar</h4>
+          <p id="portal-user-program">PGDM • 1st Semester</p>
+        </div>
+      </div>
+
+      <!-- Quick Action Pills -->
+      <div class="portal-quick-tabs">
+        <button class="portal-tab-pill active" data-view="chatbot-view">
+          <i class="fa-solid fa-comments"></i> AI Assistant
+        </button>
+        <button class="portal-tab-pill" data-view="timetable-view">
+          <i class="fa-solid fa-calendar-days"></i> Timetable
+        </button>
+        <button class="portal-tab-pill" data-view="attendance-view">
+          <i class="fa-solid fa-chart-pie"></i> Attendance
+        </button>
+        
+        <!-- 3-Dot Action Menu Button (All Options Kept Inside) -->
+        <button class="three-dots-menu-btn" id="three-dots-toggle-btn" title="More Options & Modules">
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+      </div>
+
+      <!-- 3-Dot Menu Drawer Dropdown -->
+      <div class="three-dots-dropdown" id="three-dots-dropdown-menu">
+        <button class="dropdown-item-btn" data-view="chatbot-view">
+          <i class="fa-solid fa-robot"></i> RCMB AI Assistant
+        </button>
+        <button class="dropdown-item-btn" data-view="timetable-view">
+          <i class="fa-solid fa-calendar-days"></i> Official Timetable
+        </button>
+        <button class="dropdown-item-btn" data-view="attendance-view">
+          <i class="fa-solid fa-chart-pie"></i> Attendance Tracker
+        </button>
+        <button class="dropdown-item-btn" data-view="assignments-view">
+          <i class="fa-solid fa-file-pen"></i> Course Assignments
+        </button>
+        <button class="dropdown-item-btn" data-view="notifications-view">
+          <i class="fa-solid fa-bullhorn"></i> Campus Notices
+        </button>
+        <button class="dropdown-item-btn" data-view="gallery-view">
+          <i class="fa-solid fa-images"></i> Life @ RCMB
+        </button>
+        <button class="dropdown-item-btn" id="pwa-install-app-btn" style="color: #059669;">
+          <i class="fa-solid fa-mobile-screen-button" style="color: #059669;"></i> Install App on Phone
+        </button>
+        <button class="dropdown-item-btn" data-view="profile-view">
+          <i class="fa-solid fa-user-gear"></i> Profile &amp; Settings
+        </button>
+        <button class="dropdown-item-btn btn-logout" style="color: #DC2626;">
+          <i class="fa-solid fa-power-off" style="color: #DC2626;"></i> Sign Out
+        </button>
+      </div>
+    </header>
+
+    <!-- 1. FACULTY SPECIFIC WORKSTATION (Appears only for Faculty) -->
+    <div id="faculty-dashboard-hub" class="faculty-dashboard-section">
+      <div class="kpi-card-header" style="margin-bottom: 0.8rem; font-size: 0.95rem; color: #8B1D24;">
+        <span><i class="fa-solid fa-chalkboard-user"></i> Faculty Academic Management Workstation</span>
+        <span class="slot-time-badge">Session 2026-27</span>
+      </div>
+      <div class="faculty-stats-grid">
+        <div class="kpi-card">
+          <span class="kpi-card-header">Assigned Courses</span>
+          <span class="kpi-val" id="faculty-course-name">Communication Skills</span>
+          <span class="kpi-sub">PGDM 1st Semester</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-card-header">Weekly Teaching Hours</span>
+          <span class="kpi-val">6 Slots</span>
+          <span class="kpi-sub">Amphitheatre Hall A</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-card-header">Student Class Attendance</span>
+          <span class="kpi-val" style="color: #059669;">94.2%</span>
+          <span class="kpi-sub">Average across 140 scholars</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-card-header">Submissions to Grade</span>
+          <span class="kpi-val" style="color: #C8963E;">14 Pending</span>
+          <span class="kpi-sub">Mid-term Case Studies</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. CEO / LEADERSHIP SPECIFIC SUITE (Appears only for CEO) -->
+    <div id="ceo-dashboard-hub" class="ceo-dashboard-section">
+      <div class="kpi-card-header" style="margin-bottom: 0.8rem; font-size: 0.95rem; color: #681218;">
+        <span><i class="fa-solid fa-building-columns"></i> Executive Leadership Suite • Dr. S R Mandal</span>
+        <span class="slot-time-badge" style="border-color: #681218; color: #681218;">Institutional Overview</span>
+      </div>
+      <div class="ceo-kpi-grid">
+        <div class="kpi-card">
+          <span class="kpi-card-header">Total Enrolled Scholars</span>
+          <span class="kpi-val">320</span>
+          <span class="kpi-sub">PGDM: 140 | MBA: 180</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-card-header">Institutional Attendance</span>
+          <span class="kpi-val" style="color: #059669;">92.4%</span>
+          <span class="kpi-sub">Mandatory threshold: &gt;75%</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-card-header">Faculty Strength</span>
+          <span class="kpi-val">28</span>
+          <span class="kpi-sub">Senior Chairs &amp; Adjuncts</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-card-header">Placement Record</span>
+          <span class="kpi-val" style="color: #8B1D24;">96.2%</span>
+          <span class="kpi-sub">Deloitte, EY, Amazon, HDFC</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. PERMANENTLY FIXED ANCHOR CHATBOT SECTION (Front, Prominent, Does Not Move) -->
+    <div id="view-chatbot" class="portal-module-view active">
+      <div class="chatbot-fixed-view">
+        <!-- Chatbot Header -->
+        <div class="chat-header">
+          <div class="chat-header-title">
+            <div class="bot-avatar-icon"><i class="fa-solid fa-robot"></i></div>
+            <div class="bot-title-text">
+              <h4>RCMB Academic Assistant</h4>
+              <p><span class="pulse-dot"></span> Online • PGDM 2026 &amp; MBA Knowledge Base</p>
+            </div>
+          </div>
+          <div>
+            <a href="/static/Time_Table_PGDM_2026_1st_Semester.pdf" target="_blank" class="slot-time-badge" style="text-decoration: none;">
+              <i class="fa-solid fa-file-pdf"></i> PGDM 2026 PDF
+            </a>
+          </div>
+        </div>
+
+        <!-- Chat Messages -->
+        <div class="chat-messages-area" id="chat-messages">
+          <div class="message-bubble bot">
+            <div class="message-content">
+              Hello! I am your <strong>RCMB mob AI Assistant</strong>.
+              <br><br>
+              I have loaded the official <strong>PGDM 2026 - 1st Semester Time Table</strong>. You can ask me about any date, weekday, subject, or professor in English!
+              <br><br>
+              <em>Quick questions you can ask:</em>
+              <br>• <strong>"Show my Monday timetable"</strong> or <strong>"Classes on Tuesday"</strong>
+              <br>• <strong>"When is Statistics for Management?"</strong>
+              <br>• <strong>"When is Tapas Panda communication class?"</strong>
+              <br>• <strong>"When is Asheem AI class?"</strong>
+              <br>• <strong>"What is my attendance percentage?"</strong>
+            </div>
+            <div class="message-time">Just now</div>
+          </div>
+        </div>
+
+        <!-- Quick Query Suggestion Chips (Fixed Right Above Input) -->
+        <div class="quick-queries-bar">
+          <button class="query-chip" data-query="Show my Monday timetable">
+            <i class="fa-regular fa-calendar-check"></i> Monday Timetable
+          </button>
+          <button class="query-chip" data-query="What classes on Tuesday?">
+            <i class="fa-solid fa-calendar-day"></i> Tuesday Classes
+          </button>
+          <button class="query-chip" data-query="When is Statistics for Management?">
+            <i class="fa-solid fa-chart-line"></i> Statistics Timing
+          </button>
+          <button class="query-chip" data-query="When is Tapas Panda communication class?">
+            <i class="fa-solid fa-chalkboard-user"></i> Prof. Tapas Classes
+          </button>
+          <button class="query-chip" data-query="When is Asheem AI class?">
+            <i class="fa-solid fa-robot"></i> Dr. Ashim AI Class
+          </button>
+          <button class="query-chip" data-query="What is my attendance percentage?">
+            <i class="fa-solid fa-chart-pie"></i> Check Attendance
+          </button>
+        </div>
+
+        <!-- Chat Input Bar -->
+        <div class="chat-input-bar">
+          <input type="text" id="chat-input" class="chat-input-field" placeholder="Ask in English: 'Show Monday timetable' or 'When is Economics?'...">
+          <button id="chat-send-btn" class="chat-send-btn" title="Send Question"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. OFFICIAL TIMETABLE EXPLORER TAB (Opened cleanly via 3-dot menu or quick tab) -->
+    <div id="view-timetable" class="portal-module-view" style="display: none;">
+      <div class="attendance-clean-box">
+        <div class="attendance-clean-header">
+          <div>
+            <h2 style="font-size: 1.4rem; font-weight: 800; color: #1F2937;">Official Academic Timetable</h2>
+            <p style="font-size: 0.88rem; color: #78716C;">PGDM 2026 - 1st Semester &amp; MBA Lecture Grid</p>
+          </div>
+          <div style="display: flex; gap: 0.6rem; align-items: center;">
+            <a href="/static/Time_Table_PGDM_2026_1st_Semester.pdf" target="_blank" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.45rem 0.9rem;">
+              <i class="fa-solid fa-download"></i> Download PDF
+            </a>
+            <input type="date" id="timetable-date-picker" class="form-input" style="padding: 0.4rem 0.75rem; width: auto;" value="2026-11-09">
+          </div>
+        </div>
+
+        <!-- Program Selector -->
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+          <button class="btn btn-primary program-pill-btn active" data-program="PGDM">PGDM 2026 Schedule</button>
+          <button class="btn btn-secondary program-pill-btn" data-program="MBA">MBA Schedule</button>
+        </div>
+
+        <!-- Weekday Navigation Tabs -->
+        <div class="day-picker-tabs" style="margin-bottom: 1.5rem;">
+          <button class="day-tab-btn active" data-day="Monday">Monday</button>
+          <button class="day-tab-btn" data-day="Tuesday">Tuesday</button>
+          <button class="day-tab-btn" data-day="Wednesday">Wednesday</button>
+          <button class="day-tab-btn" data-day="Thursday">Thursday</button>
+          <button class="day-tab-btn" data-day="Friday">Friday</button>
+          <button class="day-tab-btn" data-day="Saturday">Saturday</button>
+        </div>
+
+        <div id="timetable-grid-cards" class="schedule-grid-cards">
+          <!-- Populated via JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. CLEAN ATTENDANCE TRACKER (ZERO OVERLAP - COMPLETELY FIXED) -->
+    <div id="view-attendance" class="portal-module-view" style="display: none;">
+      <div class="attendance-clean-box">
+        <div class="attendance-clean-header">
+          <div>
+            <h2 style="font-size: 1.4rem; font-weight: 800; color: #1F2937;">Academic Attendance Tracker</h2>
+            <p style="font-size: 0.88rem; color: #78716C;">Official verified attendance records. Mandatory threshold is <strong>75%</strong>.</p>
+          </div>
+          <div>
+            <a href="/api/export_attendance_csv" class="btn btn-secondary">
+              <i class="fa-solid fa-file-csv"></i> Download Attendance CSV
+            </a>
+          </div>
+        </div>
+
+        <!-- Clean Metric Row (No overlapping dials!) -->
+        <div class="clean-metric-row">
+          <div class="clean-metric-card score-card">
+            <span class="metric-label">Overall Attendance</span>
+            <div class="metric-big-num" id="attendance-overall-pct">94.2%</div>
+            <span class="metric-status-tag"><i class="fa-solid fa-circle-check"></i> Examination Eligible</span>
+          </div>
+
+          <div class="clean-metric-card">
+            <span class="metric-label">Total Conducted</span>
+            <div class="metric-big-num" id="attendance-total-classes">154</div>
+            <span style="font-size: 0.76rem; color: #78716C; margin-top: 0.4rem; display: block;">Across all PGDM core modules</span>
+          </div>
+
+          <div class="clean-metric-card">
+            <span class="metric-label">Lectures Attended</span>
+            <div class="metric-big-num" id="attendance-attended-classes" style="color: #059669;">145</div>
+            <span style="font-size: 0.76rem; color: #059669; margin-top: 0.4rem; display: block;">Present in Sessions</span>
+          </div>
+
+          <div class="clean-metric-card">
+            <span class="metric-label">Attendance Shortages</span>
+            <div class="metric-big-num" style="color: #10B981;">0</div>
+            <span style="font-size: 0.76rem; color: #10B981; margin-top: 0.4rem; display: block;">No Subject Below 75%</span>
+          </div>
+        </div>
+
+        <!-- Clean Subject-wise List -->
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: #1F2937; margin-bottom: 1rem;">Subject-wise Attendance Breakdown</h3>
+        <div id="attendance-subject-list">
+          <!-- Populated cleanly via JS with zero overlap -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. ASSIGNMENTS TAB -->
+    <div id="view-assignments" class="portal-module-view" style="display: none;">
+      <div class="attendance-clean-box">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: #1F2937; margin-bottom: 0.4rem;">Course Assignments</h2>
+        <p style="font-size: 0.88rem; color: #78716C; margin-bottom: 1.5rem;">Submit all case analyses and projects before the stated deadlines.</p>
+        <div id="assignments-list-container"></div>
+      </div>
+    </div>
+
+    <!-- 7. NOTICES TAB -->
+    <div id="view-notifications" class="portal-module-view" style="display: none;">
+      <div class="attendance-clean-box">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: #1F2937; margin-bottom: 0.4rem;">Campus Circulars &amp; Notices</h2>
+        <p style="font-size: 0.88rem; color: #78716C; margin-bottom: 1.5rem;">Official updates from the Dean's Office, Placement Cell, and Examination Department.</p>
+        <div id="notifications-list-container"></div>
+      </div>
+    </div>
+
+    <!-- 8. GALLERY TAB -->
+    <div id="view-gallery" class="portal-module-view" style="display: none;">
+      <div class="attendance-clean-box">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: #1F2937; margin-bottom: 0.4rem;">Campus Life &amp; Infrastructure</h2>
+        <p style="font-size: 0.88rem; color: #78716C; margin-bottom: 1.5rem;">Visual tour of Regional College of Management Bangalore executive facilities.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+          <div style="border: 1px solid #E7E0D8; border-radius: 16px; overflow: hidden;">
+            <img src="/static/images/rcmb-building-real.jpg" alt="Neoclassical Campus" style="width: 100%; height: 250px; object-fit: cover;">
+            <div style="padding: 1.1rem;">
+              <h4 style="font-weight: 800; color: #1F2937;">Neoclassical Campus Building</h4>
+              <p style="font-size: 0.82rem; color: #78716C;">Grand entrance with white columns and administrative block.</p>
+            </div>
+          </div>
+
+          <div style="border: 1px solid #E7E0D8; border-radius: 16px; overflow: hidden;">
+            <img src="/static/images/dr-mandal-outlook.jpg" alt="Outlook Cover" style="width: 100%; height: 250px; object-fit: cover; object-position: top;">
+            <div style="padding: 1.1rem;">
+              <h4 style="font-weight: 800; color: #1F2937;">Founder - Director Dr. S R Mandal</h4>
+              <p style="font-size: 0.82rem; color: #78716C;">Featured in OUTLOOK Magazine on equality in education.</p>
+            </div>
+          </div>
+
+          <div style="border: 1px solid #E7E0D8; border-radius: 16px; overflow: hidden;">
+            <img src="/static/images/rcmb-classroom.jpg" alt="Amphitheatre Classrooms" style="width: 100%; height: 250px; object-fit: cover;">
+            <div style="padding: 1.1rem;">
+              <h4 style="font-weight: 800; color: #1F2937;">Tiered Amphitheatre Classrooms</h4>
+              <p style="font-size: 0.82rem; color: #78716C;">Stepped acoustic seating for PGDM &amp; MBA case studies.</p>
+            </div>
+          </div>
+
+          <div style="border: 1px solid #E7E0D8; border-radius: 16px; overflow: hidden;">
+            <img src="/static/images/rcmb-auditorium.jpg" alt="Auditorium" style="width: 100%; height: 250px; object-fit: cover;">
+            <div style="padding: 1.1rem;">
+              <h4 style="font-weight: 800; color: #1F2937;">Modern Auditorium</h4>
+              <p style="font-size: 0.82rem; color: #78716C;">CXO guest lectures and placement convocations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. PROFILE TAB -->
+    <div id="view-profile" class="portal-module-view" style="display: none;">
+      <div class="attendance-clean-box" style="max-width: 680px;">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: #1F2937; margin-bottom: 0.4rem;">Profile &amp; Settings</h2>
+        <p style="font-size: 0.88rem; color: #78716C; margin-bottom: 1.5rem;">Update your official contact credentials.</p>
+
+        <form id="profile-form">
+          <div class="form-group">
+            <label class="form-label">Full Legal Name</label>
+            <input type="text" id="profile-name-input" class="form-input" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" id="profile-email-input" class="form-input" disabled style="background: #F4EFEB;">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mobile Number</label>
+              <input type="tel" id="profile-mobile-input" class="form-input" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Enrolled Program</label>
+            <input type="text" id="profile-program-input" class="form-input" disabled style="background: #F4EFEB;">
+          </div>
+
+          <div class="form-group" style="margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid #E7E0D8;">
+            <label class="form-label">Update Password (optional)</label>
+            <input type="password" id="profile-pw-input" class="form-input" placeholder="Leave blank to keep current password">
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="margin-top: 1rem;"><i class="fa-solid fa-floppy-disk"></i> Save Profile Changes</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================================
+       AUTHENTICATION MODAL
+       ====================================================================== -->
+  <div id="auth-modal" class="modal-backdrop">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: #1F2937;">RCMB Portal Access</h3>
+          <p style="font-size: 0.84rem; color: #78716C; margin-top: 0.2rem;">Official Academic Authentication</p>
+        </div>
+        <button id="modal-close-btn" class="modal-close-btn" title="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="auth-tabs">
+          <button class="auth-tab-btn active" id="auth-tab-login">Sign In</button>
+          <button class="auth-tab-btn" id="auth-tab-register">Register Account</button>
+        </div>
+
+        <!-- Real Login Form -->
+        <form id="login-form">
+          <div class="form-group">
+            <label class="form-label" for="login-email">Registered Email ID</label>
+            <div class="input-with-icon">
+              <i class="fa-solid fa-envelope input-icon-left"></i>
+              <input type="email" id="login-email" class="form-input" placeholder="e.g. satish@rcmb.edu.in" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="login-password">Password</label>
+            <div class="input-with-icon">
+              <i class="fa-solid fa-lock input-icon-left"></i>
+              <input type="password" id="login-password" class="form-input" placeholder="Enter password" required>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem;"><i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In</button>
+        </form>
+
+        <!-- Real Registration Form -->
+        <form id="register-form" style="display: none;">
+          <div class="form-group">
+            <label class="form-label" for="reg-name">Full Legal Name</label>
+            <div class="input-with-icon">
+              <i class="fa-solid fa-user input-icon-left"></i>
+              <input type="text" id="reg-name" class="form-input" placeholder="e.g. Satish Kumar" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="reg-email">Email Address</label>
+              <div class="input-with-icon">
+                <i class="fa-solid fa-envelope input-icon-left"></i>
+                <input type="email" id="reg-email" class="form-input" placeholder="official/personal email" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="reg-mobile">Mobile Number (10 digits)</label>
+              <div class="input-with-icon">
+                <i class="fa-solid fa-phone input-icon-left"></i>
+                <input type="tel" id="reg-mobile" class="form-input" placeholder="9876543210" pattern="[0-9]{10}" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="reg-program">Course / Program</label>
+              <select id="reg-program" class="form-select" required>
+                <option value="PGDM" selected>PGDM (Post Graduate Diploma in Management)</option>
+                <option value="MBA">MBA (Master of Business Administration)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="reg-section">Section</label>
+              <select id="reg-section" class="form-select">
+                <option value="Section A" selected>Section A</option>
+                <option value="Section B">Section B</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="reg-password">Create Password</label>
+              <div class="input-with-icon">
+                <i class="fa-solid fa-lock input-icon-left"></i>
+                <input type="password" id="reg-password" class="form-input" placeholder="Min. 6 characters" minlength="6" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="reg-confirm-password">Confirm Password</label>
+              <div class="input-with-icon">
+                <i class="fa-solid fa-lock-open input-icon-left"></i>
+                <input type="password" id="reg-confirm-password" class="form-input" placeholder="Re-type password" minlength="6" required>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem; margin-top: 0.5rem;">
+            <i class="fa-solid fa-user-plus"></i> Create RCMB Account
+          </button>
+
+          <!-- Quick Demo Access in Every Section (Register Modal) -->
+          <div class="demo-pills-row" style="margin-top: 1.2rem; padding-top: 1rem; border-top: 1px dashed var(--border-light);">
+            <div style="font-size: 0.76rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.6rem;">
+              Or Instant Demo Access by Section:
+            </div>
+            <div class="demo-buttons-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+              <button type="button" class="btn-demo-quick btn-instant-demo" data-email="satish@rcmb.edu.in" data-pw="rcmb2026">
+                <strong>🎓 Student Section</strong><br><span style="font-size: 0.7rem; color: #78716C;">Demo: Satish</span>
+              </button>
+              <button type="button" class="btn-demo-quick btn-instant-demo" data-email="tapas.panda@rcmb.edu.in" data-pw="rcmb2026">
+                <strong>👨‍🏫 Faculty Section</strong><br><span style="font-size: 0.7rem; color: #78716C;">Demo: Prof. Tapas</span>
+              </button>
+              <button type="button" class="btn-demo-quick btn-instant-demo" data-email="ashim@rcmb.edu.in" data-pw="rcmb2026">
+                <strong>🤖 AI Faculty Section</strong><br><span style="font-size: 0.7rem; color: #78716C;">Demo: Dr. Ashim</span>
+              </button>
+              <button type="button" class="btn-demo-quick btn-instant-demo" data-email="jay.mandal@rcmb.edu.in" data-pw="rcmb2026">
+                <strong>🏛️ CEO / Leadership</strong><br><span style="font-size: 0.7rem; color: #78716C;">Demo: Dr. S R Mandal</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-notification" class="toast-msg"></div>
+
+  <!-- Frontend Controller Script -->
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
