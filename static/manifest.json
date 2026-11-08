@@ -1,0 +1,24 @@
+{
+  "name": "RCMB mob AI - Campus Platform",
+  "short_name": "RCMB mob AI",
+  "description": "Official Academic Assistant & Campus Platform for Regional College of Management Bangalore (PGDM & MBA)",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FAF7F2",
+  "theme_color": "#8B1D24",
+  "icons": [
+    {
+      "src": "/static/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/static/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
